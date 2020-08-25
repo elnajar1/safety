@@ -1,0 +1,4 @@
+[29-May-2020 19:11:43 Africa/Cairo] PHP Notice:  Undefined variable: loginURL in /home/u725001497/domains/freshweb.tech/public_html/safety/includes/sign.php on line 34
+[01-Jun-2020 17:43:52 Africa/Cairo] PHP Notice:  Undefined variable: loginURL in /home/u725001497/domains/freshweb.tech/public_html/safety/includes/sign.php on line 34
+[03-Jun-2020 23:32:02 UTC] PHP Parse error:  syntax error, unexpected '>' in /home/u725001497/domains/freshweb.tech/public_html/safety/link.php on line 225
+[08-Jun-2020 11:26:00 Africa/Cairo] PHP Notice:  Undefined variable: loginURL in /home/u725001497/domains/freshweb.tech/public_html/safety/includes/sign.php on line 34

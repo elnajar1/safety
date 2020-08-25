@@ -1,0 +1,30 @@
+.iframe-container {
+  position: relative;
+}
+
+.locker{
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  height: 30%;
+  width: 100%;
+  background: transparent; 
+}
+
+.lockedframe {
+
+ z-index: 1; 
+
+}
+#toggle_fullscreen{
+  position: absolute;
+  z-index: 3;
+  bottom: 7px;
+  right: 10px;
+}
+
+iframe a{
+    /*pointer-events: none;*/
+    font-size: 100px;
+    color: yellow ;
+}

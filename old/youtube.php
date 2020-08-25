@@ -1,0 +1,75 @@
+<?php
+	
+	
+	include $_SERVER['DOCUMENT_ROOT'] . '/safety/includes/header.php';
+
+	
+?>	
+
+<style type="text/css">
+.iframe-container {
+	position: relative;
+}
+
+.locker{
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	height: 30%;
+	width: 100%;
+	background: transparent; 
+}
+
+.lockedframe {
+
+ z-index: 1; 
+
+}
+</style>
+
+<div class="container-fluid" style="direction: rtl;">
+	<div class="row">
+		<div class="col col-sm-6">
+
+			<div class = "iframe-container"  style="width: 100%" height="315">
+				<div class="locker"></div>
+				<iframe class = "lockediframe" style="width: 100%"  height="315" src="https://www.youtube.com/embed/DFzUdTUaAr4?version=3&vq=hd720" frameborder="0" modestbranding="1" allow="accelerometer; autoplay; encrypted-media; gyroscope"  sandbox="allow-same-origin allow-scripts " ></iframe>
+			</div>
+
+			<a href="#">goooooooooooole</a>
+
+			<object width="800" height="450" data="http://www.youtube.com/embed/nmZcGPIrojI/@Model.YoutubeId&rel=0&modestbranding=1"></object>
+
+		</div>
+	</div>
+</div>
+
+
+
+<?php
+
+	include $_SERVER['DOCUMENT_ROOT'] . '/safety/includes/footer.php';
+
+
+?>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){       
+    $('a').click(function(event) {
+        alert("demo only");
+        event.preventDefault();
+    }); 
+
+    $("iframe").load(function() {
+	    $("iframe").contents().find("a").each(function(index) {
+	        $(this).on("click", function(event) {
+	        	alert("demo only");
+	            event.preventDefault();
+	            event.stopPropagation();
+	        });
+	    });
+	});
+
+});
+</script>
