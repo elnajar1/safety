@@ -2,7 +2,7 @@
 	</div><!-- /make it vue app -->
 	
 	<?php if( basename($_SERVER['PHP_SELF']) !== "video.php"): ?>	
-	<div class="container-fluid  mt-5 " style="background: #F9F9F9; background: url(/safety/layout/imgs/cool-background.png);">
+	<div class="container-fluid  mt-5 " style="background: #F9F9F9">
 
 		<div class="row" style="height: 300px">
 
@@ -22,7 +22,7 @@
 				
 
 				<a href="/safety/index.php?s=SubscribeAsVideoCreator" class="text-info d-block">
-					 أشترك الان كناشر فديوهات  مجانا 
+					الصفحة الرئيسية
 				</a>
 				
 				<a href="mailto:elnajar449@gmail.com" class="text-muted d-block">
@@ -85,7 +85,7 @@
 
 	<script src="/safety/layout/js/frb.js?v=10"></script>
    	
-	<!-- Latest compiled and minified JavaScript -->
+	<!-- Latest compiled and minified bootstrap-select JavaScript -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
     
     <!-- main js-->

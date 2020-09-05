@@ -61,7 +61,7 @@ firebase.auth().onAuthStateChanged(function(user) {
           "s" : s
       }, 
       beforeSend : function(){
-        $("#data-container" ).html('<div class="d-flex justify-content-center text-primary"><div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div></div>');
+        $("#data-container" ).html('<div class="my-3 d-flex justify-content-center text-primary"><div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div></div>');
       }, 
       success:  function(data){
 

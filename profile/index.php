@@ -103,7 +103,7 @@
 						
 						<li class="list-group-item">
 							
-							<a href = "<?= $domain . $root . '/link.php?l=' . $link['id'] ?>" class= "text-dark">
+							<a href = "<?= $domain . $root . '/link/link.php?l=' . $link['id'] ?>" class= "text-dark">
 
 								<i class="fa fa-video text-secondary p-1"></i>
 								

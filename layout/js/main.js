@@ -108,31 +108,30 @@ $(document).ready(function(){
 
     });
 
-
     //update contact 
 	$('#update-contact-form' ).submit(function(e){
-	e.preventDefault();
-    e.stopImmediatePropagation();
-        
-    var data = $('#update-contact-form').serialize();
-	
-	$.ajax({
-		url : "updateContact.php", 
-		type : "POST", 
-		data : data, 
-		beforeSend : function(){
-			$("#contact-is-updated-container" ).html(' جاري التحديث ... ');
-		}, 
-		success:  function(data){
-			$("#contact-is-updated-container" ).html(data);
-		},
-        error: function (request, status, error) { 
-        	console.log("Sorry, An error occured & respons status  : " +  request.status  + " & readyState " + request.readyState  + ": & Respons text : "  + request.responseText  +  " & status : "  +  status  + " & error : "  + error) ;         
-        }
-	});
+		e.preventDefault();
+	    e.stopImmediatePropagation();
 
-	return false ;
-	
+	    var data = $('#update-contact-form').serialize();
+		
+		$.ajax({
+			url : "updateContact.php", 
+			type : "POST", 
+			data : data, 
+			beforeSend : function(){
+				$("#contact-is-updated-container" ).html(' جاري التحديث ... ');
+			}, 
+			success:  function(data){
+				$("#contact-is-updated-container" ).html(data);
+			},
+	        error: function (request, status, error) { 
+	        	console.log("Sorry, An error occured & respons status  : " +  request.status  + " & readyState " + request.readyState  + ": & Respons text : "  + request.responseText  +  " & status : "  +  status  + " & error : "  + error) ;         
+	        }
+		});
+
+		return false ;
+		
 	});
 
 

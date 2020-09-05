@@ -14,7 +14,8 @@
 		<!-- normalize CSS  -->
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 	   
-	   	<link rel="icon" href="/safety/layout/imgs/lock.jpg">
+	   	<link rel="icon" type="image/png" sizes="undefinedxundefined" href="layout/assets/img/logo.png?h=bbdfc6a09095f7548f82c4c476b0b087">
+    	<link rel="icon" type="image/png" sizes="undefinedxundefined" href="layout/assets/img/logo.png?h=bbdfc6a09095f7548f82c4c476b0b087">
 	    <meta property="og:image" content="/safety/layout/imgs/lock.png"> 
 	    <meta property="og:image:type" content="/safety/layout/imgs/lock.png"> 
 	    <meta property="og:image:width" content="1024"> 
@@ -37,6 +38,7 @@
 	    <!-- google font -->
     	<link href="https://fonts.googleapis.com/css2?family=Changa&family=Lemonada&family=Markazi+Text&display=swap" rel="stylesheet">
     	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans" />
+    	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
 
     	 <!-- animate.css -->
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
@@ -57,7 +59,7 @@
 
 		<link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
 
-		<link rel="stylesheet" href="/safety/layout/css/main.css?v=4">
+		<link rel="stylesheet" href="/safety/layout/css/main.css?v=5">
 
 		<!-- Appzi: Capture Insightful Feedback -->
 		<script async src="https://w.appzi.io/bootstrap/bundle.js?token=6CFqk"></script>
@@ -65,6 +67,7 @@
 
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
 
 		<?php
 			if(isset($_GET['l'])){
@@ -97,48 +100,38 @@
 
 		<div id = "safety-app"><!-- make it vue app -->
 
-		<?php 
-		if( (basename($_SERVER['PHP_SELF']) !== "index.php") && (basename($_SERVER['PHP_SELF']) !== "video.php" ) ):
-		 ?>
-		<div class="container-fluid menu">
+		<?php if( basename($_SERVER['PHP_SELF']) !== "video.php" ): ?>
+		
+		<nav class="font-mont navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar main-nav ">
 
-			<div class="row border border-bottom">
+			<div class="container">
 
-				<div class="col-8">
-					<a href="/safety/index.php">
-						<h1 class="p-0 m-0 d-inline font-weight-bold text-dark"> 
-						Safety .  
-						</h1>
-					</a>
-					<small class="text-muted d-inline p-0 m-0" style="font-size: 14px">
-						احمي فديوهاتك
-					</small>
-					
-					
-				</div>
+				<a class="navbar-brand logo" href="/safety/index.php">
+					<span class="font-weight-bold">Safety </span>| freshweb
+				</a>
 
-				<?php if(isset( $user_id )): ?>
+				<button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
 
-					<div class="col m-auto text-right">
+				<div class="collapse navbar-collapse" id="navcol-1">
+	                <ul class="nav navbar-nav ml-auto">
+	                    <li class="nav-item px-2" role="presentation"><a class="nav-link" href="/safety/index.php">الرئيسية</a></li>
+	                    
+	                    <?php if(isset( $user_id )): ?>
 
-						<a href="/safety/dashboard.php" class=" text-muted">
-							<i style="font-size: 30px" class="fa fa-cog text-secondary d-sm-inline-block d-none p-3 animate__animated animate__rotateIn "></i>
+	                    <li class="nav-item px-2" role="presentation"><a class="nav-link" href="/safety/logout.php"> تسجيل الخروج </a></li>
+	                   
+	                    <?php endif; ?>
+	                </ul>
+	            </div>
 
-							<h3 class="d-sm-inline-block d-none ">
-								<?= $user_name ?>
-							</h3>
+	            <?php if(isset( $user_id )): ?>
 
+						<a href="/safety/profile/?u=<?= $user_id ?>.php" class="navbar-brand logo d-block">
+
+							<span class="text-muted"><?= $user_name ?></span>
 							<img src="<?= $user_avatar ?>" class = "rounded " style = "max-height: 40px" />
 
 						</a>
-						
-					</div>
-
-				<?php else: ?>
-
-					<div class="col m-auto text-right font-weight-bold" style="font-size: 16px">
-
-						<a href="/safety/index.php"></a>
 						
 					</div>
 
@@ -146,7 +139,7 @@
 
 			</div>	
 
-		</div>
+		 </nav>
 		<?php endif; ?>
 
 

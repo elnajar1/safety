@@ -1,5 +1,5 @@
 <?php
-	
+	 
 	include_once $_SERVER['DOCUMENT_ROOT'] . '/safety/includes/config.php';
 	include_once $_SERVER['DOCUMENT_ROOT'] . '/safety/includes/Mobile_Detect.php';
 	include_once $_SERVER['DOCUMENT_ROOT'] . '/safety/includes/phone_name.php';
@@ -45,7 +45,7 @@
 	//check if he found in s_contacts
 	if ( $count_contact > 0 ) {
 
-		//playlist_id_access_limit
+		//playlist access
 		$sql ="SELECT * FROM s_contact_playlists WHERE contact_id = ? AND 	playlist_id = ? ";
 		$stmt = $pdo->prepare($sql);
 		$stmt->execute([ $contact['id'] ,$link['playlist_id'] ]);

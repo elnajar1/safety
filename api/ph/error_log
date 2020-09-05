@@ -1,0 +1,3 @@
+[18-Jun-2020 11:24:44 UTC] PHP Notice:  Undefined index: auth in /home/u725001497/domains/freshweb.tech/public_html/safety/api/ph/read.php on line 12
+[28-Aug-2020 18:47:52 UTC] PHP Notice:  Undefined index: auth in /home/u725001497/domains/freshweb.tech/public_html/safety/api/ph/read.php on line 12
+[28-Aug-2020 18:55:35 UTC] PHP Notice:  Undefined variable: auth in /home/u725001497/domains/freshweb.tech/public_html/safety/api/ph/read.php on line 13

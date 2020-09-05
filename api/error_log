@@ -1,0 +1,4 @@
+[28-Aug-2020 18:10:43 UTC] PHP Warning:  include(includes/header.php): failed to open stream: No such file or directory in /home/u725001497/domains/freshweb.tech/public_html/safety/api/docs.php on line 4
+[28-Aug-2020 18:10:43 UTC] PHP Warning:  include(): Failed opening 'includes/header.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/u725001497/domains/freshweb.tech/public_html/safety/api/docs.php on line 4
+[28-Aug-2020 18:10:43 UTC] PHP Warning:  include(includes/footer.php): failed to open stream: No such file or directory in /home/u725001497/domains/freshweb.tech/public_html/safety/api/docs.php on line 57
+[28-Aug-2020 18:10:43 UTC] PHP Warning:  include(): Failed opening 'includes/footer.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/u725001497/domains/freshweb.tech/public_html/safety/api/docs.php on line 57

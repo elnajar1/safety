@@ -10,12 +10,6 @@
 
     include "../../includes/config.php";
     $user_id       = filter_var ( $_GET['id'] , FILTER_SANITIZE_NUMBER_INT ) ;
-    $auth       = filter_var ( $_GET['auth'] , FILTER_SANITIZE_STRING ) ;
-    
-    //for security
-    if ( $auth !== "aman_en_sha_allah"){
-        exit;
-    }
     
     //user_info
 

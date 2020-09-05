@@ -10,15 +10,12 @@
 
     include "../../includes/config.php";
     $profile_user_id       = filter_var ( $_GET['id'] , FILTER_SANITIZE_NUMBER_INT ) ;
-    $auth       = filter_var ( $_GET['auth'] , FILTER_SANITIZE_STRING ) ;
-    
-    //for security
-    if ( $auth !== "aman_en_sha_allah"){
-        exit;
-    }
     
     //links
-    $sql ="SELECT * FROM s_links WHERE s_links.user_id = ? AND s_links.privacy <> 'private' ORDER BY id DESC";
+    $sql ="SELECT 
+        id,user_id,playlist_id,title,description
+        is_time_limited,allowed_views,start_date,end_date,privacy,time
+        FROM s_links WHERE s_links.user_id = ? AND s_links.privacy <> 'private' ORDER BY id DESC";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([ $profile_user_id ]);
     $links = $stmt->fetchall();

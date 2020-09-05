@@ -2,11 +2,9 @@ body{
 
     /*font-family:Roboto,,sans-serif;*/
  
-    /*
-     
-    font-family: 'Changa', sans-serif;
-    */
-    font-family: 'Markazi Text', serif;
+    /* font-family: 'Changa', sans-serif; */
+
+    font-family: 'Markazi Text', serif; 
     background : #ffffff;
     font-size: 1.3em;
     croll-behavior: smooth;
@@ -14,8 +12,22 @@ body{
 }
 
 
+.font-mont{
+  font-family-sans-serif:"Montserrat",sans-serif;
+  font-family:sans-serif;
+  line-height:1.15;
+  -webkit-text-size-adjust:100%;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+
+}
+
 small{
   font-size: 14px;
+}
+
+.main-nav{
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
 }
 
 .menu{

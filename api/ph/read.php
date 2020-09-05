@@ -8,12 +8,6 @@
 	header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 	header("Content-Type: application/json; charset=UTF-8");
 	
-	//for security
-	$auth       = filter_var ( $_GET['auth'] , FILTER_SANITIZE_STRING ) ;
-    if ( $auth !== "aman_en_sha_allah"){
-        exit;
-	}
-	
 	include '../../includes/config.php';
 	include_once '../../includes/Mobile_Detect.php';
 	include_once '../../includes/phone_name.php';
@@ -38,10 +32,6 @@
 	$currentDate = date('Y-m-d H:i:s', strtotime($currentDate));
 	$start_date = date('Y-m-d H:i:s A', strtotime($link['start_date']) );
 	$end_date = date('Y-m-d H:i:s A', strtotime($link['end_date']) );
-	
-	//echo $currentDate . 'current<br>';
-	//echo $start_date . 'start<br>';
-	//echo $end_date . 'end<br>';
 
 	//contact info
 	$sql ="SELECT * FROM s_contacts WHERE s_contacts.user_id = ? AND s_contacts.phone = ? ";
@@ -76,7 +66,7 @@
 
 	else:
 
-		//
+		//check if link is betwen start and end date
 		if ( ( (($currentDate >= $start_date) && ($currentDate <= $end_date)) || $link['is_time_limited'] !== "on") == false  ): 
 
 			$error .= 	'<div class="alert alert-warning text-center py-3">	
@@ -105,22 +95,24 @@
 	if ( $count_contact > 0 ) {
 
 		//can he access this playlist
-		if( $contact['playlist_id_access_limit'] !== "0" ){
+		$sql ="SELECT * FROM s_contact_playlists WHERE contact_id = ? AND 	playlist_id = ? ";
+		$stmt = $pdo->prepare($sql);
+		$stmt->execute([ $contact['id'] ,$link['playlist_id'] ]);
+		$is_in_playlist = $stmt->fetch();
+		$count_is_in_playlist = $stmt->rowCount();
+		
+		if ( $count_is_in_playlist < 1 ) {
 			
-			if ( $contact['playlist_id_access_limit'] !== $link['playlist_id'] ) {
+			//He can't access this playlist
+			$error .=  "<div class = 'alert alert-danger border p-2' style = 'direction: rtl;'>
+			<img src='https://img.icons8.com/dotty/80/000000/closed-eye.png' class='d-block m-auto' />
+			<p class = 'text-center'>
+			عذرا , هذا الفديو ضمن  دورة تعليمية لم  يتم  الاشتراك  بها  
+			</p>
+			</div>";
 
-				//He can't access this playlist
-				$error .= "<div class = 'alert alert-danger border p-2' style = 'direction: rtl;'>"; 
-				$error .= '<img src="https://img.icons8.com/dotty/80/000000/closed-eye.png" class="d-block m-auto" />'; 
-				$error .= "<p class = 'text-center'> ";
-				$error .= "عذرا , هذا الفديو ضمن قائمة تشغيل  لم  يتم السماح لك بمشاهدتها ";
-				$error .= "</p>";
-				$error .= "</div>";
-
-			}
-			
 		}
-
+		
 		//calculte visits
 		if(  ( @$contact_view['phone_visits'] + @$contact_view['pc_visits'])  == $link['allowed_views'] ){
 
@@ -211,6 +203,13 @@
 		'</small>';
 	endif;
 	
+	//hide video link if theres errors
+	if ( $error == "" ){
+		$video_link = $link['link'];
+	}else{
+		$video_link = 'Not_allowed';
+	}
+	
 	@$data = [ 
 		'error' => $error,
 		'massege' => $massege,
@@ -229,7 +228,7 @@
 		'link_title' => $link['title'],
 		'link_description' => $link['description'],
 		'link_limited_time' => $link_limited_time,
-		'link_link' => $link['link'],
+		'link_link' => $video_link,
 		'is_time_limited' => $link['is_time_limited']
 	];
 

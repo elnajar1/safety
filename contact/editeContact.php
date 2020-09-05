@@ -34,6 +34,13 @@
     $his_playlists_paid = array_column( $his_playlists , 'paid' );
     $his_playlists_id_paid = array_combine( $his_playlists_id , $his_playlists_paid );
 
+    //for hidden hidden_selectpic inpute
+    foreach( $his_playlists as $his_playlist ): 
+        @$his_playlists_ids .= $his_playlist['playlist_id'] . ',';
+    endforeach;
+
+    $his_playlists_ids = substr($his_playlists_ids, 0, -1);
+
 	//for security ,do not allow any user to access this page exept the owner
 	if ($contact['user_id'] !== $user_id ) {
 		echo "Sorry, You con not access this page";
@@ -108,9 +115,8 @@
 
                     </select>
 
-                    <input type="text" name="playlists" id="hidden_selectpic" hidden />
-
-
+                    <input type="text" name="playlists" id="hidden_selectpic"
+                        value="<?= $his_playlists_ids ?>" hidden />
                 </div>
                 
                 <div class="form-group">
@@ -201,6 +207,3 @@
 
 
 ?>
-<script type="text/javascript">
-    $('#hidden_selectpic').val($('#selectpic').val());
-</script>

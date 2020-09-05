@@ -22,22 +22,6 @@
 				لوحة التحكم 
 			</h1>
 
-
-			<?php
-
-				if( $user_id == 1 ){
-
-					echo '<a href="swich.php?u=3" class="btn btn-info p-3">
-							تبديل للقناة  الثانية  
-						</a>';
-
-				}elseif ( $user_id == 3 ) {
-					echo '<a href="swich.php?u=1" class="btn btn-dark p-3">
-							تبديل للقناة  الاولي 
-						</a>';
-				}
-			?>
-
 		</div>
 
 		<div class="col-10 col-sm-5 bg-primary p-3 my-1 mx-auto text-center z-depth-1 rounded">
@@ -108,6 +92,8 @@
 		</div>
 
 	</div>
+
+	<?php include 'how_to_start.php' ?>
 
 </div>
 
