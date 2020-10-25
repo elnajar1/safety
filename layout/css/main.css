@@ -4,7 +4,12 @@ body{
  
     /* font-family: 'Changa', sans-serif; */
 
-    font-family: 'Markazi Text', serif; 
+    /*font-family: 'Markazi Text', serif;*/ 
+    
+    /*font-family: 'hanimation', serif; */
+    
+    font-family: 'cocon-next-arabic' , serif; 
+
     background : #ffffff;
     font-size: 1.3em;
     croll-behavior: smooth;
@@ -31,10 +36,10 @@ small{
 }
 
 .menu{
-  box-shadow: 0 3px 2px -4px gray; 
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top : 0px;
+  /*box-shadow: 0 3px 2px -4px gray; */
+  position: -webkit-sticky !important; /* Safari */ 
+  position: sticky !important;
+  top : 0px !important;
   z-index : 100; 
   background: white;
   opacity: 0.9;

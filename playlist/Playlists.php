@@ -8,7 +8,7 @@
 		exit;
 	}
 	
-	include '../includes/header.php';
+	include '../includes/config.php';
 	include_once '../includes/Mobile_Detect.php';
 	include_once '../includes/phone_name.php';
 	$detect = new Mobile_Detect;
@@ -18,7 +18,7 @@
 		$name = filter_var($_POST['name'] , FILTER_SANITIZE_STRING );
 		$cost = filter_var($_POST['cost'] , FILTER_SANITIZE_NUMBER_INT );
 
-		if ( !empty($name) && !empty($user_id)  && !empty($cost) ) {
+		if ( !empty($name) && !empty($user_id) ) {
 		
 			$sql = "INSERT INTO s_playlists ( user_id , name , cost ) VALUES(?,?,?)";
 			$stmt = $pdo->prepare($sql);
@@ -43,6 +43,8 @@
 	$stmt->execute([ $user_id ]);
 	$playlists = $stmt->fetchall();
 	$count_playlists = $stmt->rowCount();
+
+	include '../includes/header.php';
 
 ?>
 

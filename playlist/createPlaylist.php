@@ -54,6 +54,9 @@
                     <small class="text-muted">
                     	هذا السعر يستخدم في بيعها عن طريق الموقع وفي  الاحصائيات 
                     </small>
+                    <div class="alert alert-warning text-center">
+                    	اذا كانت الدوره مجانية يمكن للطلاب الاشتراك بها بدون دفع رسوم ادخل  السعر   صفر  ( 0 )  
+                    </div>
                 </div>
 
                 <button type="submit" name="create_playlist" class="btn btn-primary rounded">

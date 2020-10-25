@@ -29,9 +29,9 @@
 	
 	if ( !empty($name) && !empty($user_id)  && !empty($phone) ) {
 		
-		$sql = "INSERT INTO s_contacts ( name, phone , note ,user_id) VALUES(?,?,?,?)";
+		$sql = "INSERT INTO s_contacts ( name, phone , note ,user_id,added_by) VALUES(?,?,?,?,?)";
 		$stmt = $pdo->prepare($sql);
-		$stmt->execute([ $name , $phone , $note  ,$user_id] );
+		$stmt->execute([ $name , $phone , $note  ,$user_id,"user"] );
 		$contact_id = $pdo->lastInsertId();
 
 		$i = 0;

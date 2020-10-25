@@ -46,7 +46,7 @@
             <div class="container">
                 <div class="block-heading">
                     <h2 class="text-info">تسجيل الدخول</h2>
-                    <p>ليس لديك حساب ؟ قم بـ&nbsp;<a href="#">انشاء حساب جديد</a></p>
+                    <p>ليس لديك حساب ؟ قم بـ&nbsp;<a href="singup.php">انشاء حساب جديد</a></p>
                 </div>
                 <form class="text-right" method="post" action="login.php">
 

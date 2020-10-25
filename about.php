@@ -62,15 +62,20 @@
 				
 				<p class="" >
 					
-					<span style="direction: rtl;">
+					<span style="direction: rtl;" class="text-right">
 
 						<h2> ما هو  سايفتي </h2>
 						<br>
-						 اسمح   فقط لاشخاص انت تحددهم في مشاهدة فديوهاتك 
+						 هي منصة  عربيةتتيح للمعلمين بأصافة دورات تعليمية مصورة (فديوهات )&nbsp; وأتحاحتها للطلاب بسهولة , كما يمكن بيع&nbsp;هذة الدورات عن طريق الموقع&nbsp; بأذن الله
 						<br>
 
 					</span>
 					
+					<a class="navbar-brand logo" href="/safety/index.php">
+						<span class="font-weight-bold">
+							الذهاب للصفحة الرئيسية 
+					</a>
+
 					<h2>Welcome to Safety,</h2>
 					<br>
 					Safety love helping teachers to publish there online video courses to there students easily

@@ -230,7 +230,7 @@
 		<div class="col table-responsive text-center">
 
 			<h1 class="m-4 pt-4 font-weight-bold text-secondary">
-				جهات  الاتصال التي أضفتها
+				 كل المشتركين 
 			</h1>
 			<table class="table table-striped table-hover table-sm">
 

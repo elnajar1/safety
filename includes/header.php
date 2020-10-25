@@ -39,6 +39,8 @@
     	<link href="https://fonts.googleapis.com/css2?family=Changa&family=Lemonada&family=Markazi+Text&display=swap" rel="stylesheet">
     	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans" />
     	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    	<link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=hanimation" />
+    	<link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=cocon-next-arabic" />
 
     	 <!-- animate.css -->
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
@@ -102,7 +104,7 @@
 
 		<?php if( basename($_SERVER['PHP_SELF']) !== "video.php" ): ?>
 		
-		<nav class="font-mont navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar main-nav ">
+		<nav class="font-mont navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar main-nav menu">
 
 			<div class="container">
 

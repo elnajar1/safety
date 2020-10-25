@@ -5,6 +5,9 @@
 	include_once '../includes/phone_name.php';
 	$detect = new Mobile_Detect;
 
+	//filter_var($_POST['name'] , FILTER_SANITIZE_STRING )
+	//filter_var ( $_GET['c'] , FILTER_SANITIZE_NUMBER_INT ) ;
+	
 	$profile_user_id       = filter_var ( $_GET['u'] , FILTER_SANITIZE_NUMBER_INT ) ;
 
 	$sql ="SELECT * FROM s_users WHERE id = ? ";
@@ -58,6 +61,23 @@
 
 	</div>
 
+	<div class=" row p-0">
+
+		<div class="col-12 m-1">
+			<p class="d-inline-block">
+				شاارك القناة 
+				<span class="d-none d-md-inline">
+					مع اصدقائك والطلاب 
+				</span>
+			</p>
+
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <div class="addthis_inline_share_toolbox d-inline-block float-left"></div>
+        	
+		</div> 
+		
+	</div>
+
 	<div class=" row bg-muted p-0">
 
 		<div class="col-12 my-3">
@@ -65,7 +85,7 @@
 				الفديوهات 
 			</h1>
 			<small class="text-muted">
-				* يسمح  فقط الاشخاص المسجلين  بواسطة ناشر الفديوهات بالمشاهدة 
+				* تسمح   المشاهدة فقط   للاشخاص   المسجلين  بواسطة ناشر الفديوهات  او الذين قاموا بالاشتراك من خلال هذة الصفحة 
 			</small>
 		</div> 
 		
@@ -89,9 +109,27 @@
 						<p > 
 							<i class="fas fa-list-alt text-muted"></i> 
 							<?= $playlist['name'] ?>
-							<span class="float-left text-success">
-								<?= $playlist['cost'] ?> 
-								جنية 
+							
+							<span class="float-left d-inline">
+								
+								<span class=" text-success">
+									<?= $playlist['cost'] ?> 
+									جنية 
+								</span>
+								<a href="/safety/pay/?playlist_id=<?= $playlist['id'] ?>" class="btn btn-outline-primary z-depth-0 rounded py-1">
+									
+									<?php if ( $playlist['cost'] == 0 ): ?>	
+									
+										الاشتراك مجانا 
+									
+									<?php else: ?>
+
+										شراء 
+
+									<?php endif; ?>
+								
+								</a>
+							
 							</span>
 						</p>
 					</div>

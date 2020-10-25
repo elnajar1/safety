@@ -59,6 +59,16 @@
 					playlist
 				</h2>
 
+	<h3> GET all playlists 
+<span class = "badge badge-primary" >
+ New 
+</span>
+</h3>
+				<code>
+					<pre>https://freshweb.tech/safety/api/all_playlists/read.php</pre>
+				</code>
+
+
 				<h3> GET playlists videos </h3>
 				<code>
 					<pre>https://freshweb.tech/safety/api/playlist_videos/read.php?id={playlist_id}</pre>
