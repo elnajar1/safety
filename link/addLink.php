@@ -31,6 +31,8 @@
 		echo " تم بحمد الله اضافة الفديو الي قناتك  , يمكنك الاطلاع علية من هنا ";
 		echo '<a href = "'  . $domain . $root . '/link/link.php?l=' . $link_id . '" target="_blank" class="d-block">' . $domain . $root . '/link/link.php?l=' . $link_id . '</a>';
 		echo "</div>";
+	}else{
+		echo "حدث خطت ما ";
 	}
 
 	

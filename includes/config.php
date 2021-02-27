@@ -1,16 +1,18 @@
 <?php
 
 	//Bismi Alaah
-	if( $_SERVER['HTTP_HOST'] == 'freshweb.tech'){
-
-		include 'fw_connection.php';
-		$domain = "https://" . $_SERVER['HTTP_HOST'];
-		error_reporting ( 0 );
-
+	if( $_SERVER['HTTP_HOST'] == 'localhost:8080'){
+	  
+    //Database connection
+	  include 'dev_connection.php';
+	  
 	}else{
-
-		include 'connection.php';
-		$domain = "http://" . $_SERVER['HTTP_HOST'];
+	
+	  //Database connection
+	  include 'pro_connection.php';
+	
+    //error_reporting ( 0 ); 
+    
 	}
 	
 	//roots &  directorys

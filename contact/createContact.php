@@ -96,7 +96,10 @@
                     	رقم الهاتف 
                     </label>
                     <br>
-                    <input style="direction: ltr" class="form-control"  name="phone" id="phone-input" type="tel" value= "+2" required>
+                    <input style="direction: ltr" class="form-control"  name="phone" id="phone-input" type="tel" value= "" placeholder="+2123456789" required>
+                    <small class="text-muted">
+                    	ادخل رمز الدوله مصحوب ب + ثم الرقم 
+                    </small>
                 </div>
 
                 <div class="form-group">
@@ -145,7 +148,7 @@
                     	طريقة الدفع 
                     </label>
                     <input type="text"  class="form-control" value="يدوي بواستطك " disabled>
-                    <small class="text-muted">
+                    <small class="text-muted d-none">
                     	( وكذالك  يستطيع المشاركين  الاشتراك والدفع عن طريق الموقع من صفحة القناه الخاصة بك  )
                     </small>
                 </div>
