@@ -2,7 +2,7 @@
 منصة  عربيةتتيح للمعلمين بأصافة دورات تعليمية مصورة (فديوهات ) وأتحاحتها للطلاب بسهولة , كما يمكن بيع هذة الدورات عن طريق الموقع بأذن الله
 
 ## How to use 
-- Firest you should know that this project can't stand alone without an aop (api available) 
+- Firest you should know that this project can't stand alone without an app(api available) 
 - add all files in directory named "safety" to make url like "/saftey/dashboard.php"
 - in "about.php" file you will see a To Do list that I wanyed to made them
 
